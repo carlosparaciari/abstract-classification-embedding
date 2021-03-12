@@ -57,7 +57,7 @@ def hashed_padded_sequences(df_text,w2v):
 #
 # NOTE: padding 0's are sent to the 0 vector
 #
-def get_keras_embedding(w2v):
+def get_keras_embedding(w2v,masking=False):
 
     # get size of the vocabulary and embedding dimension
     vocab_size, k = w2v.vectors.shape
@@ -70,7 +70,8 @@ def get_keras_embedding(w2v):
     embedding_layer = tf.keras.layers.Embedding(vocab_size+1,
                                                 k,
                                                 weights=[embedding_weigths],
-                                                trainable=False
+                                                trainable=False,
+                                                mask_zero=masking
                                                )
     
     return embedding_layer
