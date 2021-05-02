@@ -49,3 +49,7 @@ Multiple aspects could be interesting to study.
     - Recursive Neural Network
     
 - Model evaluation (Mc Nemar Test)
+
+### Deploying with TensorFlow Serving
+
+In this repo, we provide a small notebook `serving_model.ipynb` where we show how a model deployed with TensorFlow Serving can be accessed and used for predictions.
